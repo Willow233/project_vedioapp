@@ -6,20 +6,26 @@
 </van-tabs>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import { ref } from 'vue'
+// import { getNavList } from '@/api/home'
 import axios from 'axios'
 
-export default {
-  setup () {
-    const active = ref(0)
-    axios({
-      url: '',
-      method: 'get'
-    })
-    return { active }
-  }
-}
+const active = ref(0)
+const list = ref([])
+/* const navList = async () => {
+  const res = await getNavList()
+  return res.data
+  问题！！！
+} */
+
+axios({
+  url: '/navList',
+  method: 'get'
+}).then(res => {
+  list.value = res.data
+})
+
 </script>
 
 <style>

@@ -5,6 +5,7 @@ import router from './router'
 import '@/assets/styles/base.less'
 import '@/assets/styles/iconfont.less'
 import '@/mock/index'
+// 在ts模式下 安装了mock 还要安装对应的语法包 npm i --save-dev @types/mockjs
 
 import { Tab, Tabs } from 'vant'
 
